@@ -19,7 +19,7 @@ var bigInt = new Int32<BigEndian>(42);
 // Access the native value
 // Zero-cost on BigEndian systems
 // One swap on LittleEndian systems
-// The swap may even get compiled out to instructions such as `movbe` depending on the code.
+// The swap may even get compiled out to instructions such as "movbe" depending on the code
 int native = bigInt.Get(); 
 
 // Or use it like a regular primitive
@@ -27,6 +27,8 @@ Console.WriteLine($"Value: {bigInt}");
 ```
 
 ```csharp
+// Use endianness generically as a zero-cost abstraction through generic specialization
+// Constraining "TEndian" to "struct" allows the JIT to monomorphize the method, allowing possible zero-cost inlining
 static void PrintValue<TEndian>(Int32<TEndian> value) where TEndian : struct, IEndian
 {
     // Access the native value
@@ -50,7 +52,7 @@ public struct FileHeader<TEndian> where TEndian : struct, IEndian
 
 ### Batch Conversion
 Uses the `IEndianConverter<T>` interface for SIMD-accelerated batch processing of raw data.  
-Each primitive implements it for their native type so they may be accepted as converters generically.
+Each numeric wrapper implements `IEndianConverter<T>` for its corresponding primitive type, allowing them to be used as converters generically.
 
 ```csharp
 // Pack an array of native floats into BigEndian wrappers
@@ -66,7 +68,7 @@ void Write<T, TEndianConverter>(ReadOnlySpan<T> values)
     where T : unmanaged
     where TEndianConverter : struct, IEndianConverter<T>
 {
-    // Swap into a buffer with generics
+    // Swap into a buffer generically
     // The explicit type is not required
     // Uses SIMD shuffles under the hood where possible
     TEndianConverter.Swap(values, MemoryMarshal.Cast<byte, T>(_buffer));
