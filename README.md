@@ -77,3 +77,7 @@ void Write<T, TEndianConverter>(ReadOnlySpan<T> values)
 
 ## License
 See the [COPYING](COPYING) file for details.
+
+## Acknowledgments
+This library's endianness as part of the type architecture is inspired by the rust [byteorder](https://github.com/BurntSushi/byteorder) crate.  
+This project is a clean-room implementation for the .NET ecosystem and is not a port of the rust [byteorder](https://github.com/BurntSushi/byteorder) crate.
