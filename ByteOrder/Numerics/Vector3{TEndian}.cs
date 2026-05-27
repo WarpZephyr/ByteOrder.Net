@@ -18,6 +18,7 @@ namespace ByteOrder.Numerics;
 [SkipLocalsInit]
 [StructLayout(LayoutKind.Sequential)]
 public readonly struct Vector3<TEndian> :
+    IEndianConverter<Vector3>,
     IEquatable<Vector3<TEndian>>,
     IEquatable<Vector3>,
     IFormattable

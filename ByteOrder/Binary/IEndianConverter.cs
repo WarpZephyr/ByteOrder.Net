@@ -5,7 +5,7 @@ namespace ByteOrder.Binary;
 /// <summary>
 /// An interface defining methods to swap byte order to that of the converter.
 /// </summary>
-/// <typeparam name="T">The type being represented.</typeparam>
+/// <typeparam name="T">The type being converted.</typeparam>
 public interface IEndianConverter<T>
     where T : unmanaged
 {
