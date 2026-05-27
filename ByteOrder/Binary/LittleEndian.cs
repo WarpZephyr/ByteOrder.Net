@@ -6,8 +6,7 @@ namespace ByteOrder.Binary;
 /// <summary>
 /// A definition of the little-endian byte order.
 /// </summary>
-public readonly struct LittleEndian :
-    IEndian
+public readonly struct LittleEndian : IEndian
 {
     /// <inheritdoc/>
     public static bool IsLittleEndian
