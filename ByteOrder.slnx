@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ByteOrder.AotTest/ByteOrder.AotTest.csproj" Id="08e5dd23-a249-4db4-af78-502a96176f13" />
+  <Project Path="ByteOrder/ByteOrder.csproj" />
+</Solution>

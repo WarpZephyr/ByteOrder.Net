@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Project Properties -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+	<LangVersion>latest</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <!-- Aot Properties -->
+  <PropertyGroup>
+	<IsAotCompatible>True</IsAotCompatible>
+  </PropertyGroup>
+
+  <!-- Analyzer Properties -->
+  <PropertyGroup>
+	<AnalysisMode>All</AnalysisMode>
+	<!-- 
+      IDE0290: Prefer primary constructors (Disabled for manual doc-comment control)
+      CA1000: Static members on generics (Required for generic specialization pattern)
+      CA1720: Identifiers contain type names (Necessary for explicit numeric wrappers)
+      CA1305: IFormatProvider (The wrappers redirect calls to the primitive to avoid unnecessary overhead)
+      CA1716: Identifiers should not match keywords (Disabled for simple numeric type names)
+      CA1815: Structs should implement Equals/operators (Disabled for zero-sized endianness markers)
+    -->
+	<NoWarn>$(NoWarn);IDE0290;CA1000;CA1720;CA1305;CA1716;CA1815</NoWarn>
+  </PropertyGroup>
+
+  <!-- NuGet Properties -->
+  <PropertyGroup>
+	<AssemblyName>ByteOrder</AssemblyName>
+	<PackageId>ByteOrder.Net</PackageId>
+	<Version>0.1.0-preview</Version>
+	<Authors>WarpZephyr</Authors>
+	<Description>High-performance endianness views and converters for .NET.</Description>
+	<PackageTags>endian;byteorder;binary;simd;zero-copy;csharp13;csharp14;dotnet10;aot;nativeaot</PackageTags>
+  </PropertyGroup>
+
+</Project>
