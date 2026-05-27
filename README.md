@@ -74,4 +74,4 @@ void Write<T, TEndianConverter>(ReadOnlySpan<T> values)
 ```
 
 ## License
-See the [LICENSE](LICENSE) file for details.
+See the [COPYING](COPYING) file for details.
