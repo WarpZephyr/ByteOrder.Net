@@ -46,6 +46,15 @@ public readonly struct UInt32<TEndian> :
         new(uint.MinValue);
 
     /// <summary>
+    /// Gets the underlying value without any changes.
+    /// </summary>
+    public readonly uint Raw
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => m_value;
+    }
+
+    /// <summary>
     /// Creates a new <see cref="UInt32{TEndian}"/> from the specified value, swapping byte order if necessary.
     /// </summary>
     /// <param name="value">The value to set.</param>

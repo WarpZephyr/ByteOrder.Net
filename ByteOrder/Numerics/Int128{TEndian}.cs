@@ -46,6 +46,15 @@ public readonly struct Int128<TEndian> :
         new(Int128.MinValue);
 
     /// <summary>
+    /// Gets the underlying value without any changes.
+    /// </summary>
+    public readonly Int128 Raw
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => m_value;
+    }
+
+    /// <summary>
     /// Creates a new <see cref="Int128{TEndian}"/> from the specified value, swapping byte order if necessary.
     /// </summary>
     /// <param name="value">The value to set.</param>

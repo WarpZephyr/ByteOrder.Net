@@ -45,6 +45,15 @@ public readonly struct Half<TEndian> :
         new(Half.MinValue);
 
     /// <summary>
+    /// Gets the underlying value without any changes.
+    /// </summary>
+    public readonly Half Raw
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => m_value;
+    }
+
+    /// <summary>
     /// Creates a new <see cref="Half{TEndian}"/> from the specified value, swapping byte order if necessary.
     /// </summary>
     /// <param name="value">The value to set.</param>

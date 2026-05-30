@@ -45,6 +45,15 @@ public readonly struct Single<TEndian> :
         new(float.MinValue);
 
     /// <summary>
+    /// Gets the underlying value without any changes.
+    /// </summary>
+    public readonly float Raw
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => m_value;
+    }
+
+    /// <summary>
     /// Creates a new <see cref="Single{TEndian}"/> from the specified value, swapping byte order if necessary.
     /// </summary>
     /// <param name="value">The value to set.</param>

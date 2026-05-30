@@ -27,6 +27,15 @@ public readonly struct Quaternion<TEndian> :
     private readonly Quaternion m_value;
 
     /// <summary>
+    /// Gets the underlying value without any changes.
+    /// </summary>
+    public readonly Quaternion Raw
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => m_value;
+    }
+
+    /// <summary>
     /// Creates a new <see cref="Quaternion{TEndian}"/> from the specified value, swapping byte order if necessary.
     /// </summary>
     /// <param name="value">The value to set.</param>

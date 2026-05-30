@@ -30,6 +30,15 @@ public readonly struct Vector3<TEndian> :
     private readonly Vector3 m_value;
 
     /// <summary>
+    /// Gets the underlying value without any changes.
+    /// </summary>
+    public readonly Vector3 Raw
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => m_value;
+    }
+
+    /// <summary>
     /// Creates a new <see cref="Vector3{TEndian}"/> from the specified value, swapping byte order if necessary.
     /// </summary>
     /// <param name="value">The value to set.</param>
