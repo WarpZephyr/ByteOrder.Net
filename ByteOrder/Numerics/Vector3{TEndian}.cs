@@ -22,7 +22,7 @@ public readonly struct Vector3<TEndian> :
     IEquatable<Vector3<TEndian>>,
     IEquatable<Vector3>,
     IFormattable
-    where TEndian : struct, IEndian, allows ref struct
+    where TEndian : unmanaged, IEndian, allows ref struct
 {
     /// <summary>
     /// The underlying value.

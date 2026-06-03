@@ -19,7 +19,7 @@ public readonly struct Quaternion<TEndian> :
     IEndianConverter<Quaternion>,
     IEquatable<Quaternion<TEndian>>,
     IEquatable<Quaternion>
-    where TEndian : struct, IEndian, allows ref struct
+    where TEndian : unmanaged, IEndian, allows ref struct
 {
     /// <summary>
     /// The underlying value.

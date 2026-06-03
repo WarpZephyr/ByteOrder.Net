@@ -25,7 +25,7 @@ public readonly struct Single<TEndian> :
     IFormattable,
     ISpanFormattable,
     IUtf8SpanFormattable
-    where TEndian : struct, IEndian, allows ref struct
+    where TEndian : unmanaged, IEndian, allows ref struct
 {
     /// <summary>
     /// The underlying value.

@@ -1,8 +1,7 @@
-﻿using ByteOrder.Binary;
-using System;
+﻿using System;
 using System.Runtime.CompilerServices;
 
-namespace ByteOrder.Numerics;
+namespace ByteOrder.Binary;
 
 /// <summary>
 /// An endian converter that acts as a "do nothing" pass-through when swapping is not needed in generic scenarios.

@@ -21,7 +21,7 @@ public readonly struct Vector4<TEndian> :
     IEquatable<Vector4<TEndian>>,
     IEquatable<Vector4>,
     IFormattable
-    where TEndian : struct, IEndian, allows ref struct
+    where TEndian : unmanaged, IEndian, allows ref struct
 {
     /// <summary>
     /// The underlying value.

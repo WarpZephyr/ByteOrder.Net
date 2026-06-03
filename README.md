@@ -28,8 +28,8 @@ Console.WriteLine($"Value: {bigInt}");
 
 ```csharp
 // Use endianness generically as a zero-cost abstraction through generic specialization
-// Constraining "TEndian" to "struct" allows the JIT to monomorphize the method, allowing possible zero-cost inlining
-static void PrintValue<TEndian>(Int32<TEndian> value) where TEndian : struct, IEndian
+// Constraining "TEndian" to "unmanaged" allows the JIT to monomorphize the method, allowing possible zero-cost inlining
+static void PrintValue<TEndian>(Int32<TEndian> value) where TEndian : unmanaged, IEndian
 {
     // Access the native value
     int native = value.Get(); 
@@ -42,7 +42,7 @@ static void PrintValue<TEndian>(Int32<TEndian> value) where TEndian : struct, IE
 ```csharp
 // Create structs supporting generic endianness
 // At only the cost of possibly swapping a field when accessing it
-public struct FileHeader<TEndian> where TEndian : struct, IEndian
+public struct FileHeader<TEndian> where TEndian : unmanaged, IEndian
 {
     public Int32<TEndian> Version;
     public Int32<TEndian> DataOffset;
