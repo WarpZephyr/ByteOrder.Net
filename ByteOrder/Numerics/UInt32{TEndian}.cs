@@ -303,8 +303,7 @@ public readonly struct UInt32<TEndian> :
     /// <inheritdoc cref="uint.GetHashCode()" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public override int GetHashCode()
-        // The value of the lower 32 bits XORed with the uppper 32 bits.
-        => unchecked((int)((uint)m_value)) ^ (int)(m_value >> 32);
+        => (int)m_value;
 
     #endregion
 }
