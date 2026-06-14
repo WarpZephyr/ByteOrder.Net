@@ -32,13 +32,15 @@
   <PropertyGroup>
 	<AssemblyName>ByteOrder</AssemblyName>
 	<PackageId>ByteOrder.Net</PackageId>
-	<Version>0.1.0-preview</Version>
+	<Version>0.2.0-preview</Version>
 	<Authors>WarpZephyr</Authors>
 	<Description>High-performance endianness views and converters for .NET.</Description>
 	<PackageTags>endian;byteorder;binary;simd;zero-copy;csharp13;csharp14;dotnet10;aot;nativeaot</PackageTags>
 	<Title>ByteOrder.Net</Title>
 	<RepositoryUrl>https://github.com/WarpZephyr/ByteOrder.Net</RepositoryUrl>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
+	<FileVersion>0.2.0</FileVersion>
+	<AssemblyVersion>0.2.0</AssemblyVersion>
   </PropertyGroup>
 
   <!-- NuGet Items -->
