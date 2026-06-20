@@ -38,7 +38,10 @@
 	<PackageTags>endian;byteorder;binary;simd;zero-copy;csharp13;csharp14;dotnet10;aot;nativeaot</PackageTags>
 	<Title>ByteOrder.Net</Title>
 	<RepositoryUrl>https://github.com/WarpZephyr/ByteOrder.Net</RepositoryUrl>
+	<PackageLicenseExpression>MIT OR Unlicense</PackageLicenseExpression>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
+	<IncludeSymbols>True</IncludeSymbols>
+	<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	<FileVersion>0.2.0</FileVersion>
 	<AssemblyVersion>0.2.0</AssemblyVersion>
   </PropertyGroup>
